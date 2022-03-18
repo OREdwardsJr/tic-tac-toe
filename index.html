@@ -11,6 +11,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+        </style> 
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -18,10 +21,24 @@
         <![endif]-->
         <div class="master-container">
             <div class="launch-page-container">
-                <div id="launch-header"></div>
-                <div class="launch-content"></div>
-                <div class="launch-start-game"></div>
-            </div>           
+                <div id="launch-header" class="hide-content">
+                    <h1 id="game-title" class="hide-content">
+                        Tic-Tac-Toe
+                    </h1>
+                </div>
+                <div class="launch-content" class="hide-content">
+                    <label for="one-player" class="hide-content">One Player <input type="checkbox" name="one-player" id="one-player" class="checkbox"></label>
+                    <label for="two-player" class="hide-content">Two Players <input type="checkbox" name="two-player" id="two-player" class="checkbox"></label>
+                </div>
+                <div id="launch-start-game" class="hide-content">
+                    <button id="button-start-game" class="hide-content">
+                        Start Game
+                    </button>
+                </div>
+            </div>  
+            <div class="gameplay-container">
+                
+            </div>         
         </div>
         
         <script src="tic-tac-toe.js" async defer></script>
