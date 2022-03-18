@@ -1,0 +1,41 @@
+* {
+    --launch-primary-color: #69843a;
+    --launch-secondary-color: #f7f7f0;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--launch-primary-color);
+    display: grid;
+}
+
+.master-container {
+    height: 100vh;
+    display: grid;
+    
+}
+
+.launch-page-container {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    background-color: var(--launch-secondary-color);
+    height: 80vh;
+    width: 60%;
+    place-self: center;
+    box-shadow: 6px 7px 0px 3px black;
+    border: 2px dashed var(--launch-primary-color)
+}
+
+#launch-header {
+    border: 1px solid black;
+}
+
+.launch-content {
+    border: 1px solid red;
+}
+
+.launch-start-game {
+    border: 1px solid yellow;
+}
