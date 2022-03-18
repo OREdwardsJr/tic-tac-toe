@@ -20,25 +20,46 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="master-container">
-            <div class="launch-page-container">
+            <div class="launch-page-container"> 
+                <section id="launch-styling">
                 <div id="launch-header" class="hide-content">
-                    <h1 id="game-title" class="hide-content">
-                        Tic-Tac-Toe
-                    </h1>
-                </div>
-                <div class="launch-content" class="hide-content">
-                    <label for="one-player" class="hide-content">One Player <input type="checkbox" name="one-player" id="one-player" class="checkbox"></label>
-                    <label for="two-player" class="hide-content">Two Players <input type="checkbox" name="two-player" id="two-player" class="checkbox"></label>
-                </div>
-                <div id="launch-start-game" class="hide-content">
-                    <button id="button-start-game" class="hide-content">
-                        Start Game
-                    </button>
-                </div>
-            </div>  
-            <div class="gameplay-container">
-                
-            </div>         
+                        <h1 id="game-title" class="hide-content">
+                            Tic-Tac-Toe
+                        </h1>
+                    </div>
+                    <div class="launch-content" class="hide-content">
+                        <label for="one-player" class="hide-content">One Player <input type="checkbox" name="one-player" id="one-player" class="checkbox"></label>
+                        <label for="two-player" class="hide-content">Two Players <input type="checkbox" name="two-player" id="two-player" class="checkbox"></label>
+                    </div>
+                    <div id="launch-start-game" class="hide-content">
+                        <button id="button-start-game" class="hide-content">
+                            Start Game
+                        </button>
+                    </div> 
+                </section>
+                <section id="gameplay-styling" style="height: inherit; visibility: hidden;">
+                    <div class="gameplay-container">
+                        <div class="gameplay-board">
+                            <button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button><button></button>
+                        </div>
+                        <div class="gameplay-scoreboard">
+                            <div id="scoreboard-title">SCOREBOARD</div>
+                            <div id="scoreboard-score">
+                                <div id="player1-name">Player 1:</div>
+                                <div id="player1-score" class="score-display">0</div>
+                                <div id="player2-name">Player 2:</div>
+                                <div id="player2-score" class="score-display">0</div>
+                            </div>
+                            <div id="label-new-game">
+                                <button class="button-new-game">
+                                    NEW GAME
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+            </div>        
         </div>
         
         <script src="tic-tac-toe.js" async defer></script>
