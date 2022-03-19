@@ -4,8 +4,10 @@ const startGameButton = document.querySelector("#button-start-game")
 const launchPageContainer = document.querySelector(".launch-page-container")
 const launchGamePlay = document.querySelector("#gameplay-styling");
 const newGameButton = document.querySelector(".button-new-game");
-let player1score = document.querySelector("#player1-score");
-let player2score = document.querySelector("#player2-score");
+let player1Score = document.querySelector("#player1-score");
+let player2Score = document.querySelector("#player2-score");
+let player1Name = document.querySelector("#player1-name");
+let player2Name = document.querySelector("#player2-name");
 
 for (let i = 0; i < hideContent.length; i++) {
     startGameButton.addEventListener("click", () => {
@@ -64,12 +66,15 @@ const takeTurn = (button, buttonID) => {
         button.textContent = "X"
         button.value = 1
         button.style = "background-color: rgba(51, 170, 51, .2);"
-        player = "Player 1"
+        player2Name.style = "border-bottom: 7px dashed var(--launch-primary-color)"
+        player1Name.style = "border-bottom: 0px"
+
     } else {
         button.textContent = "O"
         button.value = -1
         button.style = "background-color: rgba(242, 0, 0, .2);"
-        player = "Player 2"
+        player1Name.style = "border-bottom: 7px dashed var(--launch-primary-color)"
+        player2Name.style = "border-bottom: 0px"
     };
 
     switch (buttonID) { //This executes as expected
@@ -125,11 +130,11 @@ function checkGame () {
         if (methods[j] === 3) {
             alert("Player 1 Wins!");
             resetGame();
-            player1score.textContent = parseInt(player1score.textContent) + 1;
+            player1Score.textContent = parseInt(player1Score.textContent) + 1;
         } else if (methods[j] === -3) {
             alert("Player 2 Wins");
             resetGame();
-            player2score.textContent = parseInt(player2score.textContent) + 1;
+            player2Score.textContent = parseInt(player2Score.textContent) + 1;
         } else if (rounds == 9) { 
             alert("Tie game!");
             resetGame();
@@ -152,10 +157,11 @@ function resetGame () {
         gamePieces[k].textContent = "";
         gamePieces[k].style = "background-color: var(--launch-secondary-color";
         gamePieces[k].disabled = false;
-    }
+    };
     for (let l = 0; l < methods.length; l++) {
         methods[l] = 0;
-    }
-}
+    };
+    rounds = 0;
+};
 
 newGameButton.addEventListener("click", () => resetGame());

@@ -101,6 +101,7 @@ input.checkbox :active {
 
 .gameplay-board button {
     background-color: transparent;
+    font-size: 17vh;
 }
 
 .gameplay-scoreboard {
