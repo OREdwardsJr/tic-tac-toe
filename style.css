@@ -27,7 +27,6 @@ body {
     border: 2px dashed var(--launch-primary-color)
 }
 
-
 /* Launch-pad design */
 #launch-header {
     display: grid;

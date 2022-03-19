@@ -8,11 +8,14 @@ let player1Score = document.querySelector("#player1-score");
 let player2Score = document.querySelector("#player2-score");
 let player1Name = document.querySelector("#player1-name");
 let player2Name = document.querySelector("#player2-name");
+let rounds = 0
+const gamePieces = document.querySelectorAll(".game-pieces");
+let methods = new Array(0, 0, 0, 0, 0, 0, 0, 0);
 
+// Start Game Page
 for (let i = 0; i < hideContent.length; i++) {
     startGameButton.addEventListener("click", () => {
         hideContent[i].style = "visibility: hidden;";
-    
     });
 };
 
@@ -21,21 +24,9 @@ startGameButton.addEventListener("click", () => {
     launchGamePlay.style = "visibility: normal; position: absolute; height: inherit";
 });
 
-// Game Controls
-// Note to self - add underline to indicate turns
-let rounds = 0
-const gamePieces = document.querySelectorAll(".game-pieces");
-
-//Winning methods:
-
-
-
-let methods = new Array(0, 0, 0, 0, 0, 0, 0, 0);
-
-
-// Factory function
+//Play Game
+//Factory function
 const takeTurn = (button, buttonID) => {
-    let player;
     button.disabled = "true";
     if (rounds % 2 === 0) {
         button.textContent = "X"
@@ -43,7 +34,6 @@ const takeTurn = (button, buttonID) => {
         button.style = "background-color: rgba(51, 170, 51, .2);"
         player2Name.style = "border-bottom: 7px dashed var(--launch-primary-color)"
         player1Name.style = "border-bottom: 0px"
-
     } else {
         button.textContent = "O"
         button.value = -1
@@ -52,7 +42,7 @@ const takeTurn = (button, buttonID) => {
         player2Name.style = "border-bottom: 0px"
     };
 
-    switch (buttonID) { //This executes as expected
+    switch (buttonID) {
         case 0:
             methods[0] += parseInt(button.value);
             methods[3] += parseInt(button.value);
